@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/customWindowBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/customWindowBackground"
+        app:elevation="0dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/customBorderColor"
+            app:cardBackgroundColor="?attr/customCardBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_month"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="April 2026"
+                        android:textColor="?attr/customTextPrimary"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-black"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_prev"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_icon_btn"
+                        android:src="@drawable/ic_chevron_left"
+                        app:tint="?attr/customTextPrimary"
+                        android:contentDescription="@string/prev_month"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_next"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_icon_btn"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="?attr/customTextPrimary"
+                        android:contentDescription="@string/next_month"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingBottom="8dp">
+                    <TextView style="@style/CalendarHeaderDay" android:text="S"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="M"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="T"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="W"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="T"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="F"/>
+                    <TextView style="@style/CalendarHeaderDay" android:text="S"/>
+                </LinearLayout>
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:id="@+id/grid_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    app:columnCount="7"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_sheet_handle"
+                android:alpha="0.8"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_selected_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/today"
+                        android:textColor="?attr/customTextPrimary"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-medium"/>
+                    <TextView
+                        android:id="@+id/tv_selected_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0% completion"
+                        android:textColor="?attr/customTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <!-- Legend minimized -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <View android:layout_width="8dp" android:layout_height="8dp"
+                        android:background="@drawable/bg_heatmap_0" android:layout_marginEnd="2dp"
+                        android:alpha="0.6"/>
+                    <View android:layout_width="8dp" android:layout_height="8dp"
+                        android:background="@drawable/bg_heatmap_3"
+                        android:backgroundTint="?attr/colorPrimary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_day_habits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:paddingBottom="24dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

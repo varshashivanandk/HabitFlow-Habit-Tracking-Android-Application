@@ -1,0 +1,51 @@
+# Gradle files
+.gradle/
+build/
+app/build/
+*/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.shelf/
+
+# Local configuration
+local.properties
+*.properties.local
+
+# Log files
+*.log
+
+# Android Studio / IntelliJ
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.hprof
+
+# Secrets
+google-services.json
+app/google-services.json
+GoogleService-Info.plist
+*credential*.json
+*credentials*.json
+*service-account*.json
+serviceAccountKey.json
+*.jks
+*.keystore
+
+# Temporary files
+temp_calendar.java
+temp_calendar_old.java
+temp_calendar_layout.xml
+temp_calendar_layout_refinement.xml
+*.tmp
+*.temp

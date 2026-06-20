@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/customWindowBackground">
+
+    <!-- ViewPager2 for swiping between tabs (ends at bottom navigation bar) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Bottom Navigation View directly placed, styled transparently -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:background="?attr/customNavBackground"
+        app:elevation="0dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@drawable/nav_item_selector"
+        app:itemTextColor="@drawable/nav_item_selector"
+        app:itemActiveIndicatorStyle="@style/NavIndicator"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- FAB – floating over the center placeholder, centered vertically in the nav bar -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white"
+        android:contentDescription="@string/content_description_add_habit"
+        app:backgroundTint="?attr/colorPrimary"
+        app:fabSize="mini"
+        app:fabCustomSize="44dp"
+        app:maxImageSize="20dp"
+        app:elevation="12dp"
+        android:elevation="12dp"
+        app:shapeAppearanceOverlay="@style/FabShape"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_nav"
+        app:layout_constraintTop_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="@id/bottom_nav"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

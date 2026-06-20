@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Open Rounded Box (Outer Path) -->
+    <path
+        android:pathData="M256,120 H160 C133.49,120 112,141.49 112,168 V344 C112,370.51 133.49,392 160,392 H352 C378.51,392 400,370.51 400,344 V256"
+        android:strokeWidth="48"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="112"
+                android:startY="120"
+                android:endX="400"
+                android:endY="392"
+                android:type="linear">
+                <item android:offset="0" android:color="#22E67B" />
+                <item android:offset="1" android:color="#4D7CFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Checkmark (Overlapping Path) -->
+    <path
+        android:pathData="M160,256 L224,320 L400,144"
+        android:strokeWidth="48"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="160"
+                android:startY="144"
+                android:endX="400"
+                android:endY="320"
+                android:type="linear">
+                <item android:offset="0" android:color="#22E67B" />
+                <item android:offset="1" android:color="#4D7CFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

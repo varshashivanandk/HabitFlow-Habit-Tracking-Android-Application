@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HabitFlow</string>
+    <string name="app_tagline">Build your best self, one day at a time.</string>
+    <string name="content_description_app_logo">HabitFlow logo</string>
+    <string name="content_description_close">Close</string>
+
+    <!-- Nav Labels -->
+    <string name="nav_today">Today</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_progress">Progress</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Home Screen -->
+    <string name="good_morning">Good Morning,</string>
+    <string name="good_afternoon">Good Afternoon,</string>
+    <string name="good_evening">Good Evening,</string>
+    <string name="todays_habits">Today\'s Habits</string>
+    <string name="habits_complete">%1$d / %2$d</string>
+    <string name="streak_label">🔥 %1$d day streak</string>
+    <string name="add_habit">+ New Habit</string>
+    <string name="label_rest_day">Mark as Rest Day</string>
+    <string name="label_my_habits">My Habits</string>
+    <string name="empty_title">No habits yet</string>
+    <string name="empty_subtitle">Start your journey by adding a habit!</string>
+
+    <string name="progress_start">Add habits to get started!</string>
+    <string name="progress_keep_going">%1$d%% complete — keep going! 💪</string>
+    <string name="progress_almost_there">%1$d%% complete — almost there! 🔥</string>
+    <string name="progress_done">All done for today! 🎉</string>
+
+    <plurals name="streak_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+
+    <string name="quote_format">\"%1$s\"</string>
+    <string name="quote_author_format">— %1$s</string>
+    <string name="rest_day_toast">Rest day marked! Enjoy your break 🌿</string>
+    <string name="rest_day_suffix"> (Rest Day 😴)</string>
+
+    <!-- Add/Edit Habit -->
+    <string name="add_habit_title">New Habit</string>
+    <string name="add_task_title">New Task</string>
+    <string name="label_goal_type">Goal Type</string>
+    <string name="label_frequency">Frequency</string>
+    <string name="type_habit">Habit</string>
+    <string name="type_task">Task</string>
+    <string name="freq_daily">Daily</string>
+    <string name="freq_weekly">Weekly</string>
+    <string name="freq_custom">Custom</string>
+    <string name="habit_summary_format">%1$s • %2$s</string>
+    <string name="task_summary_format">%1$s • Task</string>
+    <string name="edit_habit_title">Edit Habit</string>
+    <string name="hint_habit_name">What habit do you want to build?</string>
+    <string name="hint_habit_desc">Why does this matter to you? (optional)</string>
+    <string name="label_category">Category</string>
+    <string name="label_priority">Priority</string>
+    <string name="label_time_of_day">Time of Day</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="label_reminder_initial">R</string>
+    <string name="label_color">Habit Color</string>
+    <string name="label_icon">Icon</string>
+    <string name="label_checklist">Checklist</string>
+    <string name="label_add_item">Add Item</string>
+    <string name="label_daily_reminder">Daily Reminder</string>
+    <string name="default_reminder_time">08:00 AM</string>
+    <string name="no_reminder">No reminder set</string>
+    <string name="btn_save">Save Habit</string>
+    <string name="btn_delete">Delete Habit</string>
+    <string name="content_description_add_habit">Add Habit</string>
+    <string name="content_description_add_note">Add Note</string>
+
+    <!-- Delete Confirmation -->
+    <string name="delete_confirm_title_habit">Delete Habit</string>
+    <string name="delete_confirm_title_task">Delete Task</string>
+    <string name="delete_confirm_message">Are you sure you want to delete \'%1$s\'? This action cannot be undone.</string>
+    <string name="btn_confirm_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Calendar -->
+    <string name="calendar_title">Calendar</string>
+    <string name="completion_percentage">%1$d%% completion</string>
+    <string name="today">Today</string>
+    <string name="label_less">Less</string>
+    <string name="label_more">More</string>
+    <string name="prev_month">Previous month</string>
+    <string name="next_month">Next month</string>
+
+    <!-- Progress -->
+    <string name="progress_title">Progress</string>
+    <string name="label_best_streak">Best Streak</string>
+    <string name="label_completed">Total Completions</string>
+    <string name="label_current">Current Streak</string>
+    <string name="label_breakdown">Habit Breakdown</string>
+    <string name="label_heatmap">Activity Heatmap</string>
+    <string name="label_day">Day</string>
+    <string name="label_week">Week</string>
+    <string name="label_month">Month</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Your habits are waiting.</string>
+    <string name="register_title">Start Your Journey</string>
+    <string name="register_subtitle">Build habits that stick.</string>
+    <string name="hint_name">Full name</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Sign In</string>
+    <string name="btn_register">Create Account</string>
+    <string name="link_register">New here? Create an account</string>
+    <string name="link_login">Already have an account? Sign In</string>
+    <string name="skip">Continue without account</string>
+    <string name="or_separator">OR</string>
+    <string name="btn_google">Continue with Google</string>
+    <string name="error_login_failed">Could not sign in. Please check your details and try again.</string>
+    <string name="error_register_failed">Could not create your account. Please try again.</string>
+    <string name="error_google_sign_in_failed">Could not connect to Google. Please try again.</string>
+    <string name="subtask_hint">Subtask name</string>
+    <string name="content_description_remove_task">Remove task</string>
+
+    <!-- Quotes -->
+    <string-array name="quotes">
+        <item>We are what we repeatedly do. Excellence, then, is not an act, but a habit.|Aristotle</item>
+        <item>Success is the sum of small efforts, repeated day in and day out.|Robert Collier</item>
+        <item>Motivation is what gets you started. Habit is what keeps you going.|Jim Ryun</item>
+        <item>The secret of your future is hidden in your daily routine.|Mike Murdock</item>
+        <item>Your habits will determine your future.|Jack Canfield</item>
+        <item>The only way to do great work is to love what you do.|Steve Jobs</item>
+        <item>Don\'t watch the clock; do what it does. Keep going.|Sam Levenson</item>
+        <item>Believe you can and you\'re halfway there.|Theodore Roosevelt</item>
+        <item>Your limit—it\'s just your imagination.|Unknown</item>
+        <item>Push yourself, because no one else is going to do it for you.|Unknown</item>
+        <item>Great things never come from comfort zones.|Unknown</item>
+        <item>Dream it. Wish it. Do it.|Unknown</item>
+        <item>Success doesn’t just find you. You have to go out and get it.|Unknown</item>
+        <item>The harder you work for something, the greater you’ll feel when you achieve it.|Unknown</item>
+        <item>Dream bigger. Do bigger.|Unknown</item>
+        <item>Don’t stop when you’re tired. Stop when you’re done.|Unknown</item>
+        <item>Wake up with determination. Go to bed with satisfaction.|Unknown</item>
+        <item>Do something today that your future self will thank you for.|Unknown</item>
+        <item>Little things make big days.|Unknown</item>
+        <item>It’s going to be hard, but hard does not mean impossible.|Unknown</item>
+        <item>Don’t wait for opportunity. Create it.|Unknown</item>
+        <item>Sometimes we’re tested not to show our weaknesses, but to discover our strengths.|Unknown</item>
+        <item>The key to success is to focus on goals, not obstacles.|Unknown</item>
+        <item>Dream it. Believe it. Build it.|Unknown</item>
+    </string-array>
+    <string name="label_appearance">Appearance</string>
+    <string name="label_preferences">Preferences</string>
+    <string name="label_push_notifications">Push Notifications</string>
+    <string name="label_daily_reminders">Daily Reminders</string>
+    <string name="label_rate_app">Rate App</string>
+    <string name="label_share_friends">Share with Friends</string>
+    <string name="btn_connect_google">Connect Google Account</string>
+    <string name="btn_connecting_google">Connecting...</string>
+    <string name="toast_google_connected">Google account connected. Your local habits are syncing.</string>
+    <string name="error_google_connect_failed">Could not connect to Google. Please try again.</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="sign_out_message">Are you sure you want to sign out from HabitFlow?</string>
+    <string name="version_format">Version %1$s</string>
+    <string name="email_verification_sent">Verification email sent to %1$s</string>
+    <string name="error_email_required">Email required</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_password_required">Password required</string>
+    <string name="error_password_length">Min 6 characters required</string>
+    <string name="error_name_required">Name required</string>
+    <string name="label_progress">Today\'s Progress</string>
+    <string name="label_your_habits">Your Habits</string>
+    <string name="chip_all">All</string>
+    <string name="chip_morning">Morning</string>
+    <string name="chip_afternoon">Afternoon</string>
+    <string name="chip_evening">Evening</string>
+    <string name="error_enter_name">Please enter a name</string>
+    <string name="error_fill_fields">Please fill all required fields</string>
+    <string name="label_select_days">Select Days</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+</resources>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingBottom="40dp">
+
+    <!-- Handle -->
+    <View android:layout_width="32dp" android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp" android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_sheet_handle"
+        android:alpha="0.2"/>
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingHorizontal="24dp" android:paddingVertical="16dp">
+
+        <TextView android:id="@+id/tv_sheet_title"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/add_habit_title"
+            style="@style/AppTitleMedium"
+            android:textColor="?attr/customTextPrimary"/>
+
+        <ImageButton android:id="@+id/btn_close"
+            android:layout_width="32dp" android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="?attr/customTextSecondary"
+            android:contentDescription="@string/content_description_close"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="24dp">
+
+            <!-- Type and Frequency -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/label_goal_type"
+                        android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                        android:textStyle="bold" android:letterSpacing="0.05"
+                        android:layout_marginBottom="8dp"/>
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chips_type"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:singleSelection="true" app:selectionRequired="true">
+                        <com.google.android.material.chip.Chip android:id="@+id/chip_type_habit"
+                            style="@style/FilterChip" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/type_habit" android:checked="true"/>
+                        <com.google.android.material.chip.Chip android:id="@+id/chip_type_task"
+                            style="@style/FilterChip" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/type_task"/>
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_frequency_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/label_frequency"
+                        android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                        android:textStyle="bold" android:letterSpacing="0.05"
+                        android:layout_marginBottom="8dp"/>
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chips_frequency"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:singleSelection="true" app:selectionRequired="true">
+                        <com.google.android.material.chip.Chip android:id="@+id/chip_freq_daily"
+                            style="@style/FilterChip" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/freq_daily" android:checked="true"/>
+                        <com.google.android.material.chip.Chip android:id="@+id/chip_freq_weekly"
+                            style="@style/FilterChip" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/freq_weekly"/>
+                        <com.google.android.material.chip.Chip android:id="@+id/chip_freq_custom"
+                            style="@style/FilterChip" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/freq_custom"/>
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Custom Days Picker (Hidden by default) -->
+            <LinearLayout
+                android:id="@+id/ll_custom_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/label_select_days"
+                    android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                    android:textStyle="bold" android:letterSpacing="0.05"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chips_days"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:singleSelection="false"
+                    app:chipSpacingHorizontal="4dp">
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_mon" android:id="@+id/day_mon" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_tue" android:id="@+id/day_tue" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_wed" android:id="@+id/day_wed" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_thu" android:id="@+id/day_thu" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_fri" android:id="@+id/day_fri" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_sat" android:id="@+id/day_sat" android:checkable="true"/>
+                    <com.google.android.material.chip.Chip style="@style/FilterChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/day_sun" android:id="@+id/day_sun" android:checkable="true"/>
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <!-- Habit name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_name"
+                style="@style/InputField"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="@string/hint_habit_name" android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:textColor="?attr/customTextPrimary"
+                    android:textSize="16sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Description -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_desc"
+                style="@style/InputField"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="@string/hint_habit_desc" android:layout_marginBottom="24dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_desc"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="2" android:maxLines="3"
+                    android:textColor="?attr/customTextPrimary"
+                    android:textSize="14sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Section Label -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/label_icon"
+                android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                android:textStyle="bold" android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+
+                <FrameLayout
+                    android:id="@+id/btn_custom_emoji"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/bg_icon_container"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/tv_selected_emoji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="🎯"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="28sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap to change emoji"
+                        android:textColor="?attr/customTextPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Choose any emoji from your keyboard"
+                        android:textColor="?attr/customTextSecondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Category -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/label_category"
+                android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                android:textStyle="bold" android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_category"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                app:singleSelection="true" app:selectionRequired="true"
+                android:layout_marginBottom="24dp"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip android:id="@+id/chip_fitness"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="💪 Fitness" android:checked="true"/>
+                <com.google.android.material.chip.Chip android:id="@+id/chip_learning"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="📚 Learning"/>
+                <com.google.android.material.chip.Chip android:id="@+id/chip_wellness"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="🧘 Wellness"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Priority -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/label_priority"
+                android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                android:textStyle="bold" android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_priority"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                app:singleSelection="true" app:selectionRequired="true"
+                android:layout_marginBottom="24dp"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip android:id="@+id/chip_low"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Low"/>
+                <com.google.android.material.chip.Chip android:id="@+id/chip_medium"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Medium" android:checked="true"/>
+                <com.google.android.material.chip.Chip android:id="@+id/chip_high"
+                    style="@style/FilterChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="High"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Checklist Section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/label_checklist"
+                android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                android:textStyle="bold" android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_checklist_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_checklist_item"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_add_item"
+                app:icon="@drawable/ic_add"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Reminder Card -->
+            <LinearLayout android:id="@+id/row_reminder_time"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card_outlined"
+                android:paddingHorizontal="16dp" android:paddingVertical="14dp"
+                android:layout_marginBottom="32dp"
+                android:clickable="true" android:focusable="true">
+
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="?attr/colorPrimary"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/label_reminder"/>
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/label_daily_reminder"
+                        android:textColor="?attr/customTextPrimary" android:textSize="14sp"
+                        android:textStyle="bold"/>
+                    <TextView android:id="@+id/tv_reminder_time"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/default_reminder_time"
+                        android:textColor="?attr/customTextSecondary" android:textSize="12sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_reminder"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:useMaterialThemeColors="true"/>
+            </LinearLayout>
+
+            <!-- Save button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                style="@style/PrimaryButton"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="@string/btn_save"/>
+
+            <!-- Delete button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/btn_delete"
+                android:textColor="@color/error_red"
+                android:visibility="gone"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
